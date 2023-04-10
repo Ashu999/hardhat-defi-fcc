@@ -2,7 +2,7 @@
 import { ethers, getNamedAccounts, network } from "hardhat"
 import { networkConfig } from "../helper-hardhat-config"
 
-export const AMOUNT = (ethers.utils.parseEther("0.1")).toString()
+export const AMOUNT = ethers.utils.parseEther("0.1").toString()
 
 export async function getWeth() {
     const { deployer } = await getNamedAccounts()
@@ -18,4 +18,3 @@ export async function getWeth() {
     const wethBalance = await iWeth.balanceOf(deployer)
     console.log(`Got ${wethBalance.toString()} WETH`)
 }
-
